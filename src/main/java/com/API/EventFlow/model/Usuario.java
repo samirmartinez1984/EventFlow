@@ -22,13 +22,21 @@ public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "nombres")
     private String nombre;
+
     @Column(name = "apellidos")
     private String primerApellido;
+
+    @Column(name = "cedula", unique = true)
+    private String cedula;
+
     @Column(name = "correo", unique = true)
     private String correo;
+
     private String clave;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "rol", columnDefinition = "ENUM('ADMIN','CLIENTE')")
     private Rol rol;

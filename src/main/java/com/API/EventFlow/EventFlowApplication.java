@@ -13,4 +13,3 @@ public class EventFlowApplication {
 		SpringApplication.run(EventFlowApplication.class, args);
 	}
 }
-

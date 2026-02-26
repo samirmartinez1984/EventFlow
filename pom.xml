@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.6</version>
+		<version>3.3.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -19,7 +19,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>25</java.version>
+		<java.version>21</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
@@ -50,7 +50,8 @@
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
-			<version>0.12.5</version> </dependency>
+			<version>0.12.5</version>
+		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-impl</artifactId>
@@ -87,6 +88,13 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+
+        <!-- Apache HttpClient 5 for robust RestTemplate -->
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>5.3.1</version>
+        </dependency>
 
 		<!-- H2 for testing -->
 		<dependency>
@@ -130,7 +138,7 @@
 				</executions>
 				<configuration>
 					<doclint>none</doclint>
-					<source>25</source>
+					<source>21</source>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
@@ -165,7 +173,7 @@
 			<plugin>
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
-				<version>11.7.2</version>
+				<version>10.13.0</version>
 				<configuration>
 					<url>jdbc:mysql://localhost:3306/eventos</url>
 					<user>root</user>
